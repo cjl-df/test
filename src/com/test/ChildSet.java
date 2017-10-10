@@ -1,4 +1,4 @@
-package test;
+package com.test;
 
 /*************************************************************************
     > File Name: ChildSet.java

@@ -1,4 +1,4 @@
-package test;
+package com.test;
 
 public class HanNuoTa{
 		public static void first(int i,int j,int k,int n){
