@@ -1,4 +1,4 @@
-package com.bookm;
+package com.books.mjkf;
 
 public class GeneratePrimes{
     private static boolean[] f;

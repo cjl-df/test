@@ -1,4 +1,4 @@
-package com.bookm.bowling;
+package com.books.mjkf.bowling;
 
 public class Game {
 

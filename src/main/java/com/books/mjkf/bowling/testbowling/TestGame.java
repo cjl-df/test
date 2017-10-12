@@ -1,6 +1,6 @@
-package com.bookm.bowling.testbowling;
+package com.books.mjkf.bowling.testbowling;
 
-import com.bookm.bowling.Game;
+import com.books.mjkf.bowling.Game;
 import junit.framework.TestCase;
 
 public class TestGame extends TestCase{
