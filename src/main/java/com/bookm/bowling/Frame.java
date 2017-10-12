@@ -1,4 +1,4 @@
-package com.bookm;
+package com.bookm.bowling;
 
 public class Frame {
 
