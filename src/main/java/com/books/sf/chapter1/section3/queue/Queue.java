@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 /**
  * 队列的链表实现
- * ？ 如果先取得队列迭代器，在对队列出栈操作会不会有问题。这个迭代期应该用外部列的变量判断会不会更好一些
  */
 public class Queue<Item> implements Iterable<Item>{
 

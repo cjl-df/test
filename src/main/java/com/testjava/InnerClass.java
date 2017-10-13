@@ -7,6 +7,7 @@ package com.testjava;
 
 public class InnerClass {
     int i =10;
+    Test test = new Test();
 
     public void outI(){
         System.out.println(i);
@@ -21,6 +22,8 @@ public class InnerClass {
     }
 
     private class Inner{
+
+        Test dd = test;
 
         public void addI(){
             i=i+10;
@@ -43,16 +46,14 @@ public class InnerClass {
     public static void main(String[] args) {
         InnerClass ic = new InnerClass();
         Inner inner = ic.getInner();
-
-        ic.changeI();
-        ic.outI();
-
-        inner.addI();
-        inner.outInerI();
-
         Inner inner1 = ic.getInner();
+        /**
+         * 外部类的变量，对于内部类是共享的
+         */
+        ic.changeI();
+        inner.addI();
         inner1.addI();
-
+        ic.outI();
         inner1.outInerI();
         inner.outInerI();
 
@@ -65,5 +66,23 @@ public class InnerClass {
         inner.changeInnerStr();
         System.out.println(inner.innerStr);
         System.out.println(inner1.innerStr);
+
+        System.out.println("----------------");
+        /**
+         * 可以这样操作外部类对象，也可以直接用
+         */
+        ic.test.add();
+        System.out.println(ic.test.j);
+        System.out.println(inner.dd.j);
+        System.out.println(inner1.dd.j);
+    }
+}
+
+
+class Test{
+    int j = 0;
+
+    public void add(){
+        j++;
     }
 }
