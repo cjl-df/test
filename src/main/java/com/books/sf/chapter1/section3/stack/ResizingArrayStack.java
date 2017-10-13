@@ -7,6 +7,7 @@ import java.util.Iterator;
  * 1.能够动态调整大小
  * 2.可以迭代
  * 3.具有范型
+ * 4.数组实现
  */
 public class ResizingArrayStack<Item> implements Iterable<Item>{
 
