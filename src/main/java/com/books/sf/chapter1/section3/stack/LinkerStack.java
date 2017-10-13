@@ -3,6 +3,8 @@ package com.books.sf.chapter1.section3.stack;
 import java.util.Iterator;
 
 /**
+ * 1.递归
+ * 2.范型
  * 这是链表实现栈
  */
 public class LinkerStack<Item> implements Iterable<Item> {
@@ -38,17 +40,22 @@ public class LinkerStack<Item> implements Iterable<Item> {
     }
 
     public Iterator<Item> iterator() {
-        return null;
+        return new LinerStackIterator<Item>();
     }
 
     private class LinerStackIterator<Item> implements Iterator<Item>{
+        private Node current = first;
 
         public boolean hasNext() {
-            return false;
+            return current.node!=null;
         }
 
         public Item next() {
-            return null;
+            Item item = (Item) current.item;
+            current = current.node;
+            return item;
         }
+
+        public void remove(){}
     }
 }

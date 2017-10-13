@@ -21,12 +21,22 @@ public class InnerClass {
     }
 
     private class Inner{
+
         public void addI(){
             i=i+10;
         }
 
         public void outInerI(){
             System.out.println(i);
+        }
+
+        /**
+         * 内部类自己定义的变量，内部类的对象之是相互不知道的
+         */
+        String innerStr = "only Inner define";
+
+        public void changeInnerStr(){
+            innerStr = innerStr+",have bin changed!";
         }
     }
 
@@ -45,5 +55,15 @@ public class InnerClass {
 
         inner1.outInerI();
         inner.outInerI();
+
+        System.out.println("---------------");
+        /**
+         * 上面的说明普通内部类对象 共享外部类的对象
+         * 下面说明外部类对象 不公想内部类对象
+         * 下面的还说明 内部类的各个对象，不共享，并且不可见内部类内部自己定义的变量 比如
+         */
+        inner.changeInnerStr();
+        System.out.println(inner.innerStr);
+        System.out.println(inner1.innerStr);
     }
 }
