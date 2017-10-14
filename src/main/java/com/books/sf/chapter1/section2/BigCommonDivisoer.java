@@ -1,4 +1,4 @@
-package com.books.sf.chapter1;
+package com.books.sf.chapter1.section2;
 
 /**
  * 用来计算最大公约数

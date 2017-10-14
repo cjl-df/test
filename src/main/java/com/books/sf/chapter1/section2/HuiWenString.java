@@ -1,4 +1,4 @@
-package com.books.sf.chapter1;
+package com.books.sf.chapter1.section2;
 
 import junit.framework.TestCase;
 
