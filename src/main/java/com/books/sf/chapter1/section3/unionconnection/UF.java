@@ -22,7 +22,7 @@ public class UF {
         return find(p) == find(q);
     }
 
-    public int find(int p){ return id[p];}
+    private int find(int p){ return id[p];}
 
     public void union(int p,int q){
         //将p和q归并到相同的分量中
