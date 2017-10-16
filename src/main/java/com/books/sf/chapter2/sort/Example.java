@@ -35,7 +35,9 @@ public class Example {
         Comparable[] a = {3,5,2,7,0,8};
 //        Selection.sort(a);
 //        Insertion.sort(a);
-        Shell.sort(a);
+//        Shell.sort(a);
+//        Merge.sort(a);
+        MergeBU.sort(a);
         Example.show(a);
     }
 }
