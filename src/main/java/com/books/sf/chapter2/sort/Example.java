@@ -37,7 +37,8 @@ public class Example {
 //        Insertion.sort(a);
 //        Shell.sort(a);
 //        Merge.sort(a);
-        MergeBU.sort(a);
+//        MergeBU.sort(a);
+        Quick.sort(a);
         Example.show(a);
     }
 }
