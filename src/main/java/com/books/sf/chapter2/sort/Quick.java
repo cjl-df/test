@@ -17,7 +17,7 @@ public class Quick {
         sort(a,persition+1,hi);
     }
 
-    public static int partition(Comparable[] a, int lo ,int hi){
+    private static int partition(Comparable[] a, int lo ,int hi){
         int i = lo, j = hi+1;
         Comparable v = a[lo];
         //要保证j指向最小的里面最大的一个

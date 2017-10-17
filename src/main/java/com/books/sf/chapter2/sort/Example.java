@@ -38,7 +38,8 @@ public class Example {
 //        Shell.sort(a);
 //        Merge.sort(a);
 //        MergeBU.sort(a);
-        Quick.sort(a);
+//        Quick.sort(a);
+        MyQuick.sort(a);
         Example.show(a);
     }
 }
