@@ -39,7 +39,9 @@ public class Example {
 //        Merge.sort(a);
 //        MergeBU.sort(a);
 //        Quick.sort(a);
-        MyQuick.sort(a);
+//        MyQuick.sort(a);
+//        Quick3Way.sort(a);
+        MasSort.sort(a);        //注意0是不参与排序的
         Example.show(a);
     }
 }
