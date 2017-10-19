@@ -1,6 +1,7 @@
 package com.books.sf.chapter3;
 
 import com.books.sf.chapter1.section2.BinarySearch;
+import com.books.sf.chapter1.section3.queue.Queue;
 
 public class BinarySearchST<Key extends Comparable<Key>,Value> {
 
@@ -80,5 +81,21 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
         N--;
         if(N < vals.length/4);
             resize(vals.length/2);
+    }
+
+    public Iterable<Key> keys(Key lo,Key hi){
+        Queue<Key> queue = new Queue<Key>();
+        for (int i = rank(lo); i <= rank(hi); i++) {
+            queue.enQueue(keys[i]);
+        }
+        if(contains(hi))
+            queue.enQueue(keys[rank(hi)]);
+        return queue;
+    }
+
+    private boolean contains(Key key){
+        int i = rank(key);
+        if(i<N && keys[i].compareTo(key) == 0) return true;.
+        return false;
     }
 }
