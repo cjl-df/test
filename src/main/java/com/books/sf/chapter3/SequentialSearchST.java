@@ -3,6 +3,7 @@ package com.books.sf.chapter3;
 import java.util.Iterator;
 
 /**
+ * map实现
  * 无序符号表
  * 以向下压栈的方式构造链表无符号链表
  */

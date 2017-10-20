@@ -1,7 +1,10 @@
 package com.books.sf.chapter3;
 
-import com.books.sf.chapter1.section2.BinarySearch;
 import com.books.sf.chapter1.section3.queue.Queue;
+
+/**
+ * 二分查找数组实现map(有序表)
+ */
 
 public class BinarySearchST<Key extends Comparable<Key>,Value> {
 
@@ -95,7 +98,7 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 
     private boolean contains(Key key){
         int i = rank(key);
-        if(i<N && keys[i].compareTo(key) == 0) return true;.
+        if(i<N && keys[i].compareTo(key) == 0) return true;
         return false;
     }
 }
