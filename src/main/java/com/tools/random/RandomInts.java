@@ -1,4 +1,4 @@
-package com.tools;
+package com.tools.random;
 
 import java.util.HashSet;
 import java.util.Iterator;
