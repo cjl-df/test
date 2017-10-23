@@ -45,7 +45,7 @@ public class RandomInts {
      */
     public static Set<Integer> getRandomInts(int n,int max,int min){
         Set<Integer> set = new HashSet<Integer>(n);
-        while(set.size() != n+2){
+        while(set.size() != n){
             set.add(getRandom(max,min));
         }
         return set;
