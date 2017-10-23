@@ -1,4 +1,4 @@
-package com.books.sf.chapter3;
+package com.books.sf.chapter3.map;
 
 public class RedBlackBST<Key extends Comparable<Key>,Value> {
     private Node root;

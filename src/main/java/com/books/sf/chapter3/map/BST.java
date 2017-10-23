@@ -1,4 +1,4 @@
-package com.books.sf.chapter3;
+package com.books.sf.chapter3.map;
 
 import com.books.sf.chapter1.section3.queue.Queue;
 

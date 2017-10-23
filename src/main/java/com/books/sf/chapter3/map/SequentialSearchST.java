@@ -1,4 +1,4 @@
-package com.books.sf.chapter3;
+package com.books.sf.chapter3.map;
 
 import java.util.Iterator;
 
