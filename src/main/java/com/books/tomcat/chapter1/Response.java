@@ -1,4 +1,4 @@
-package com.books.tomcat.chapter1.servertmp;
+package com.books.tomcat.chapter1;
 
 import java.io.File;
 import java.io.FileInputStream;

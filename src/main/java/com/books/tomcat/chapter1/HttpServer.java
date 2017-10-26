@@ -1,6 +1,4 @@
-package com.books.tomcat.chapter1.servertmp;
-
-import junit.framework.TestCase;
+package com.books.tomcat.chapter1;
 
 import java.io.File;
 import java.io.IOException;
