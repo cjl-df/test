@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false, //隐含any类型是否报错，比如初始化变量为null等
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "ES6",
+    "outDir": "./dist"
+  },
+  "compileOnSave": true,
+  "include": ["./**/*.ts"],
+  "exclude": ["./**/*(.js|.json)"]
+}
