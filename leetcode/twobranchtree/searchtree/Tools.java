@@ -3,39 +3,7 @@ import leetcode.twobranchtree.*;
 import java.util.*;
 
 public class Tools {
-
-    /**
-     * 将数组转换成树，按层序结构转换
-     * @param  t 数组
-     * @return 树
-     */
-    public TreeNode arrayToTree(Integer [] t ){
-        if(t==null || t.length <1) return null;
-        TreeNode [] x = new TreeNode[t.length];
-        for(int i=0;i<x.length;i++){
-            if(t[i]!=null)
-                x[i] = new TreeNode(t[i]);
-            else 
-                x[i] = null;
-        }
-        for(int i=0, j=(int)Math.pow( 2,i+1);j<t.length;i++,j=(int)Math.pow( 2,i+1)){
-            for(int begin=(int)Math.pow(2,i),temp=0 ;begin+temp<j;temp++){
-                int w = j+2*temp;
-                if(w-1 < t.length){
-                    x[begin+temp-1].left = x[w -1];
-                }
-                if(w<t.length){
-                    x[begin+temp-1].right = x[w];
-                }
-                if(w>=t.length){
-                    return x[0];
-                }
-            }
-        }
-        return x[0];
-    }
-
-    public TreeNode kthLargest(TreeNode root, int[] x,int k) {
+     TreeNode kthLargest(TreeNode root, int[] x,int k) {
         if(root == null) return null;
         TreeNode t = kthLargest(root.right,  x,k) ;
         if(t!=null) return t;
@@ -78,7 +46,7 @@ public class Tools {
      * @param pre
      * @return
      */
-    public List<TreeNode> findeNode(TreeNode root, int key,TreeNode pre){
+    List<TreeNode> findeNode(TreeNode root, int key,TreeNode pre){
         if(root == null) return null;
         if(root.val == key){
             return Arrays.asList(new TreeNode[]{pre,root});
@@ -89,5 +57,28 @@ public class Tools {
                 return findeNode( root.right,  key,root);
             }
         }
+    }
+
+    /**
+     * 二叉搜索树 转换双向循环链表
+     * @param root
+     * @return
+     */
+    public TreeNode pre, head;
+    public TreeNode treeToDoublyList(TreeNode root) {
+        if(root == null) return null;
+        dfs(root);
+        head.left = pre;
+        pre.right = head;
+        return head;
+    }
+    void dfs(TreeNode cur) {
+        if(cur == null) return;
+        dfs(cur.left);
+        if(pre != null) pre.right = cur;
+        else head = cur;
+        cur.left = pre;
+        pre = cur;
+        dfs(cur.right);
     }
 }
