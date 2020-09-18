@@ -1,4 +1,4 @@
-package leetcode.twobranchtree;
+package leetcode.tree.twobranchtree;
 
 public class TreeNode {
     public int val;

@@ -1,4 +1,4 @@
-package leetcode.twobranchtree;
+package leetcode.tree.twobranchtree;
 import java.util.List;
 import java.util.ArrayList;
 

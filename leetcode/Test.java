@@ -1,13 +1,13 @@
 
 package leetcode;
-import leetcode.twobranchtree.searchtree.*;
+import leetcode.tree.twobranchtree.searchtree.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import leetcode.strutils.*;
 import leetcode.permutation.*;
-import leetcode.twobranchtree.TreeHandler;
-import leetcode.twobranchtree.TreeNode;
+import leetcode.tree.twobranchtree.TreeHandler;
+import leetcode.tree.twobranchtree.TreeNode;
 
 public class Test{ 
     public static void main(String[] args) {

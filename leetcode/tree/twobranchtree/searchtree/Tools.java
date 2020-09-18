@@ -1,5 +1,5 @@
-package leetcode.twobranchtree.searchtree;
-import leetcode.twobranchtree.*;
+package leetcode.tree.twobranchtree.searchtree;
+import leetcode.tree.twobranchtree.*;
 import java.util.*;
 
 public class Tools {
