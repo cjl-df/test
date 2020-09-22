@@ -8,12 +8,16 @@ import leetcode.strutils.*;
 import leetcode.permutation.*;
 import leetcode.tree.twobranchtree.TreeHandler;
 import leetcode.tree.twobranchtree.TreeNode;
+import leetcode.array.LinearArray;
+import leetcode.array.Matrix;
+import leetcode.array.Util;
 
 public class Test{ 
     public static void main(String[] args) {
-        PermutationMain permutationMain = new PermutationMain();
-        List<List<Integer>> res =permutationMain.permuteUnique(new int[]{1,1,2,3},0,3) ;
-        permutationMain.print(res);
+        LinearArray linearArray = new LinearArray();
+        // [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20],[21,22,23,24,25]]
+        int res =linearArray.majorityElement(
+            new int[]{3,3,4});
         System.out.println(res);
     }
 }
