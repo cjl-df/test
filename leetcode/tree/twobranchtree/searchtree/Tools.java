@@ -81,4 +81,14 @@ public class Tools {
         pre = cur;
         dfs(cur.right);
     }
+
+    /**
+     * 查找二叉搜索树中所有的众数
+     * @param root
+     * @return
+     */
+    public int[] findMode(TreeNode root) {
+
+        return new int[]{1,2};
+    }
 }

@@ -1,6 +1,5 @@
 package leetcode.array;
 import java.util.Map;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -131,4 +130,67 @@ public class LinearArray{
         }
         return t;
     }
+
+    //将数组升序排列  插入
+    public int[] sortArrayByInsert(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            int x  = nums[i-1];
+            for (int j = i; j < nums.length; j++) {
+                if(nums[j]<x){
+                    int t = x;
+                    x = nums[j];
+                    nums[j] = t;
+                }
+            }
+            nums[i-1] = x;
+        } 
+        return nums;
+    }   
+
+    //将数组升序排列  冒泡
+    public int[] sortArrayByPop(int[] nums) {
+        int e = nums.length;
+        for (int i = 0; i < e; i++) {
+            int temp = e;
+            for (int j = 0; j < temp-1; j++) {
+                if(nums[j]>nums[j+1]){
+                    int t = nums[j];
+                    nums[j] = nums[j+1];
+                    nums[j+1] = t;
+                    e = j+1;
+                }
+            }
+            i=0;
+        } 
+        return nums;
+    }   
+
+    //将数组升序排列  冒泡
+    public int[] sortArrayByFast(int[] nums) {
+        sortArrayByFast(nums,0,nums.length-1);
+        return nums;
+    }  
+
+    public void sortArrayByFast(int[] nums,int start,int end) {
+        if(start>=end){
+            return ;
+        }
+        int i = start,j = end;
+        int x = nums[start];
+        while(start<end){
+            while(start<end && nums[end]>=x){
+                end--;
+            }
+            if(start<end)
+                nums[start++] = nums[end];
+            while(start<end && nums[start]<=x){
+                start++;
+            }
+            if(start<end)
+                nums[end--] = nums[start];
+        }
+        nums[start] = x;
+        sortArrayByFast(nums,i,start-1);
+        sortArrayByFast(nums,start+1,j);
+    } 
 }
