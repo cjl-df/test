@@ -116,5 +116,45 @@ public class TreeHandler {
         return list;
     }
 
+    /**
+     * 之字形遍历二叉树
+     */
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        List<TreeNode> temp =  new ArrayList<>();
+        if(root !=null){
+            List<Integer> t = new ArrayList<>();
+            temp.add(root);
+            t.add(root.val);
+            res.add(t);
+        }
+        boolean flag = false;
+        while(temp.size()>0){
+            List<Integer> t = new ArrayList<>();
+            List<TreeNode> y =  new ArrayList<>();
+            for(int j = temp.size()-1;j>=0;j--){
+                TreeNode z = temp.get(j);
+                handleLevelOrderNode(t,y,z,flag);
+            }
+            flag = !flag;
+            if(t.size()>0)
+                res.add(t);
+            temp = y;
+        }
+        return res;
+    }
 
+    private void handleLevelOrderNode(List<Integer> t,List<TreeNode> y,TreeNode z,boolean flag){
+        TreeNode l = flag?z.left:z.right;
+        TreeNode r = flag?z.right:z.left;
+
+        if(l!=null){
+            t.add(l.val);
+            y.add(l);
+        }
+        if(r!=null){
+            t.add(r.val);
+            y.add(r);
+        }
+    }
 }
