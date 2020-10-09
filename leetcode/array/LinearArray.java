@@ -1,5 +1,6 @@
 package leetcode.array;
 import java.util.Map;
+import java.util.Stack;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -193,4 +194,15 @@ public class LinearArray{
         sortArrayByFast(nums,i,start-1);
         sortArrayByFast(nums,start+1,j);
     } 
+
+    /**
+     * 去除无效的括号
+     * @param s
+     * @return
+     */
+    public String minRemoveToMakeValid(String s) {
+        int left = 0,right = 0;
+        char[] sc = s.toCharArray();
+        return "";
+    }
 }
