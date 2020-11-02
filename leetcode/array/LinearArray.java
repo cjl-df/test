@@ -1,8 +1,7 @@
 package leetcode.array;
-import java.util.Map;
-import java.util.Stack;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class LinearArray{
 
@@ -195,14 +194,102 @@ public class LinearArray{
         sortArrayByFast(nums,start+1,j);
     } 
 
-    /**
-     * 去除无效的括号
-     * @param s
-     * @return
-     */
-    public String minRemoveToMakeValid(String s) {
-        int left = 0,right = 0;
-        char[] sc = s.toCharArray();
-        return "";
+
+    //纸牌分组
+    public boolean isNStraightHand(int[] hand, int W){
+        if(hand.length % W != 0) return false;
+        if(W==1) return true;
+        return _isNStraightHand(hand,W,0);
     }
-}
+    public boolean _isNStraightHand(int[] hand, int W,int start) {
+        if(start>=hand.length) return true;
+        int x = hand[start];  
+        for(int i=start+1;i<hand.length;i++){
+            if(hand[i]<x){
+                int t = x;
+                x = hand[i];
+                hand[i] = t;   
+            }
+        }
+        hand[start] = x;
+        int y = x + W-1;
+        int j = 1;
+        int i = start+1;
+        while(i<hand.length){
+            if(hand[i]<=y){
+                int t = hand[i] - x + start;
+                if(i == t ){
+                    j++;
+                    i++;
+                }else{
+                    if(hand[t] != hand[i]){
+                        j++;
+                        hand[i] = hand[t];
+                        hand[t] = hand[start] + t;
+                    }
+                    i++;
+                }
+                if(j == W){
+                    return _isNStraightHand(hand,W,start+W);
+                }  
+            }     
+        }
+        return false;
+    }
+
+    //数组快速排序
+    public void fastSort(int[] array,int start,int end) {
+        if (end <= start) return;
+        int t = array[start];
+        int i = start,
+          j = end;
+        while (i < j) {
+          while (i < j && array[j] > array[i]) {
+            j--;
+          }
+          if (i < j) {
+            array[i++] = array[j];
+            array[j] = t;
+          }
+          while (i < j && array[i] < array[j]) {
+            i++;
+          }
+          if (i < j) {
+            array[j--] = array[i];
+            array[i] = t;
+          }
+        }
+        fastSort(array, start, i - 1);
+        fastSort(array, i + 1, end);
+      }
+
+      //冒泡排序
+      public void popSort(int[] array) {
+        for (int i = array.length - 1; i > 0; i--) {
+            int t = i;
+          for (int j = 0; j < i; j++) {
+            if (array[j] > array[j + 1]) {
+                int temp = array[j];
+              array[j] = array[j + 1];
+              array[j + 1] = temp;
+              t = j + 1;
+            }
+          }
+          i = t;
+        }
+      }
+
+
+    //1528. 重新排列字符串
+    public String restoreString(String s, int[] indices) {
+        for (int i = 0; i < indices.length; i++) {
+            int x = indices[i];
+            indices[x] = i; 
+        }
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < indices.length; i++) {
+            sb.append(s.charAt(indices[i]));
+        }
+        return sb.toString();
+    }
+}   

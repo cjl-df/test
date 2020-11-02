@@ -2,7 +2,25 @@ package leetcode.link.singleway;
 import leetcode.link.ListNode;
 import java.util.Stack;
 
-public class SingleWayLink {
+public class SingleWayLink { 
+
+    public ListNode root = null;
+
+    //单链表构造函数
+    public SingleWayLink(ListNode root){
+        this.root = root;
+    }
+
+    //将数组直接转换为单链表
+    public SingleWayLink(int[] arr){
+        ListNode troot = new ListNode(-1);
+        ListNode root = troot;
+        for (int x : arr) {
+            troot.next = new ListNode(x);
+            troot = troot.next;
+        }
+        this.root = root.next;
+    }
 
     //两个链表相加
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -43,5 +61,23 @@ public class SingleWayLink {
             l = l.next;
         }
         return s;
+    }
+
+    //返回倒数第k个节点  类似于快慢直至
+    public int kthToLast(ListNode head, int k) {
+
+        ListNode x=head;
+        ListNode y = head;
+
+        for(int i =1;y!=null && i<=k;i++){
+            y = y.next;
+        }
+        
+        while(y!=null){
+            x = x.next; 
+            y = y.next;
+        }
+
+        return x.val;
     }
 }

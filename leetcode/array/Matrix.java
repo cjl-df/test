@@ -1,4 +1,6 @@
 package leetcode.array;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Matrix {
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
@@ -22,4 +24,12 @@ public class Matrix {
             return true;
         }
     }
+
+
+    //是不是一个完美的矩形
+    public boolean isRectangleCover(int[][] rectangles) {
+
+        return false;
+    }
 }
+
